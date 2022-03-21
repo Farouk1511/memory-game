@@ -1,0 +1,23 @@
+.nav-head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.nav-head span{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 120%;
+   
+}
+
+.nav-head h1,h3{
+    margin: 0;
+}
+
+.nav-head h3{
+    font-size:120% ;
+}
