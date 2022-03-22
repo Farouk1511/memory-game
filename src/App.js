@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Card from "./components/Card";
 import data from "./data.json";
@@ -24,9 +24,11 @@ function App() {
         setScores(scores + 1);
       }
     });
-
-    setCards(shuffle(data));
   };
+
+  useEffect(() => {
+    setCards(shuffle(data));
+  }, [scores]);
 
   const reset = () => {
     data.forEach((card) => (card.clicked = false));
@@ -57,10 +59,10 @@ function App() {
       <Nav
         title="Memory Game"
         subHead="Get points by clicking on an image but don't click on any more than once!"
-        score = {scores}
-        highscore = {highscore}
+        score={scores}
+        highscore={highscore}
       />
-    
+
       <div className="card-list">
         {cards.map((card) => (
           <Card
